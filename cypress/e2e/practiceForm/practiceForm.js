@@ -6,7 +6,7 @@ import {
   Then,
   Before,
 } from '@badeball/cypress-cucumber-preprocessor';
-import { PracticeFormPage } from './pages/PracticeFormPage';
+import { PracticeFormPage } from '../pages/PracticeFormPage';
 
 var form;
 var testData;

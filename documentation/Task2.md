@@ -48,3 +48,27 @@
 > THEN 4 places are returned  
 > AND They are all in the state of England  
 > AND Each one has a place name, longitude, state, state abbreviation and latitude
+
+## Questions/notes to PO
+
+- Please provide a background as part of the story, mention the API endpoint, like the task context does
+- Why these countries? Why these postcode ranges? Do we have a priority for countries (e.g. much more customers in France so focus test efforts/data there)?
+- Do you need availability and performance insights about this endpoint?
+
+\## Scenario improvements
+
+### Generic
+
+- Add negative scenarios which use invalid data and pass on error message
+- Provide positive and negative test data in feature files (as opposed to step definitions)
+- Move 'GIVEN I am searching for a postcode' step to Background.
+- Merge a few similar steps using generalised step definitions
+
+### Scenario 1
+
+- Question to PO: the word 'request' in the THEN step must be a mistake, it is meant to be 'response', right?
+- Let's do a full schema validation instead of checking the response 'manually' node by node
+
+### Scenario 4
+
+- Fix GIVEN step, the word 'am' is missing. Obsolete after this step is moved to Background

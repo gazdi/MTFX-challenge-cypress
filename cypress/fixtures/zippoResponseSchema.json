@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "post code": {
+      "type": "string",
+      "minLength": 1
+    },
+    "country": {
+      "type": "string",
+      "minLength": 1
+    },
+    "country abbreviation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "places": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "place name",
+          "longitude",
+          "state",
+          "state abbreviation",
+          "latitude"
+        ],
+        "properties": {
+          "place name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "longitude": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state abbreviation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "latitude": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "post code",
+    "country",
+    "country abbreviation",
+    "places"
+  ]
+}

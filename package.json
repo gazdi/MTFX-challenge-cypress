@@ -19,16 +19,25 @@
   },
   "homepage": "https://github.com/gazdi/MTFX-challenge-cypress#readme",
   "devDependencies": {
-    "cypress": "^13.15.0"
-  },
-  "dependencies": {
+    "cypress": "^13.15.0",
     "@badeball/cypress-cucumber-preprocessor": "^21.0.2",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
-    "@testing-library/cypress": "^10.0.2"
+    "@testing-library/cypress": "^10.0.2",
+    "ajv": "^8.17.1",
+    "chai": "^5.1.1"
   },
+  "dependencies": {},
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/e2e/**/*.{js,ts}"
-    ]
+      "cypress/e2e/[filepath].{js,ts}"
+    ],
+    "json": {
+      "enabled": true,
+      "output": "reports/cucumber-report.json"
+    },
+    "html": {
+      "enabled": true,
+      "output": "reports/cucumber-report.html"
+    }
   }
 }

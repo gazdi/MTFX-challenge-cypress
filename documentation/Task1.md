@@ -28,7 +28,7 @@ The provided acceptance criteria was a mix of a story, a test framework improvem
 - If the product under test is a form like the target of this task, automation tester is not a consumer, an actor who wants to fill in the form. An administrative user is. An automation tester is an actor when the story is about the framework itself, like in the second part of the story.
 - I would take steps to clarity with the team the difference between a story and its ACs. BDD can be a good tool when used properly across the organisation, otherwise the need to add this extra layer to the test scripts just for the sake of calling it BDD is usually just a hinderance for the qa team.
 
-While trying to keep in line with the outline of the story, I decided to split the implementation into three parts as [practiceForm.feature](/cypress/e2e/features/practiceForm/) shows:
+While trying to keep in line with the outline of the story, I decided to split the implementation into three parts as [practiceForm.feature](/cypress/e2e/practiceForm/) shows:
 
 - A naive approach  
   Just what the first part of the story asks for, hardcoded data is entered the form and the confirmation message is verified after submitting the form.
@@ -63,14 +63,24 @@ Some minor changes were added to the [userDetails](/cypress/fixtures/userDetails
   Convenience.
 - Update cucumber stepDefinitions 'typo' in [package.json](/package.json)  
   What would 'e3e' mean, anyway?
-- Add json and html reporting to cucumber in [package.json](/package.json)  
-  Html for human consumers, json for github test summary.
 - Update all packages to latest  
   @badeball/cypress-cucumber-preprocessor ^18.0.6 → ^21.0.2  
   @bahmutov/cypress-esbuild-preprocessor ^2.2.0 → ^2.2.3  
   cypress ^13.3.2 → ^13.15.0
-- Add @testing-library/cypress library  
+
+### Reporting
+
+- Add json and html reporting to cucumber in [package.json](/package.json)  
+  Html for human consumers, json for github test summary.
+
+### Additional libraries
+
+- Add @testing-library/cypress  
   DOM queries, role based finding strategies
+- Add chai
+  Non-webfirst assertions
+- Add ajv
+  JSON schema validation
 
 ### Workin around demoqa.com issues
 

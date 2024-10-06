@@ -21,7 +21,8 @@ async function setupNodeEvents(on, config) {
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://demoqa.com',
-    specPattern: '**/*.feature',
+    specPattern: ['cypress/e2e/**/*.feature'],
+    screenshotOnRunFailure: false,
     setupNodeEvents,
   },
 });
