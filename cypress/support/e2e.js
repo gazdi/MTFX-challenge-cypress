@@ -13,4 +13,15 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import './commands'
+import './commands';
+
+Cypress.on('uncaught:exception', (err) => {
+  if (
+    err.message.includes(
+      'Cypress detected that an uncaught error was thrown from a cross origin script.'
+    )
+  ) {
+    console.log(`Ignoring an uncaught exception: \n${err.message}`);
+    return false;
+  }
+});

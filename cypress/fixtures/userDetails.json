@@ -3,14 +3,16 @@
     "firstName": "Jane",
     "lastName": "Smith",
     "email": "automation-test@tester.com",
-    "gender": "female",
-    "mobile": "1234567891"
+    "gender": "Female",
+    "mobile": "1234567891",
+    "dob": "01 January 1999"
   },
   {
     "firstName": "John",
     "lastName": "Chan",
     "email": "automation-test2@tester.com",
-    "gender": "male",
-    "mobile": "9876543211"
+    "gender": "Male",
+    "mobile": "9876543211",
+    "dob": "31 December 1987"
   }
 ]

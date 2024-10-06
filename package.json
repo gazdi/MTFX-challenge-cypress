@@ -1,7 +1,7 @@
 {
-  "name": "cypress-auotmation-challenge",
+  "name": "mtfx-challenge-cypress",
   "version": "1.0.0",
-  "description": "Cypress project to be used for the automation QA technical challenge",
+  "description": "Cypress project to respond to the MillTechFX automation QA technical challenge",
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run --browser chrome",
@@ -9,24 +9,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/milltechfx/cypress-auotmation-challenge.git"
+    "url": "git+https://github.com/gazdi/MTFX-challenge-cypress.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Csaba Bobak",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/milltechfx/cypress-auotmation-challenge/issues"
+    "url": "https://github.com/gazdi/MTFX-challenge-cypress/issues"
   },
-  "homepage": "https://github.com/milltechfx/cypress-auotmation-challenge#readme",
+  "homepage": "https://github.com/gazdi/MTFX-challenge-cypress#readme",
   "devDependencies": {
-    "cypress": "^13.3.2"
+    "cypress": "^13.15.0"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
+    "@testing-library/cypress": "^10.0.2"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true,
-    "stepDefinitions": ["cypress/e3e/**/*.{js,ts}"]
+    "stepDefinitions": [
+      "cypress/e2e/**/*.{js,ts}"
+    ]
   }
 }
