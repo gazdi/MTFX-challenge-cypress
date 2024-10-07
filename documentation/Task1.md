@@ -68,17 +68,22 @@ Some minor changes were added to the [userDetails](/cypress/fixtures/userDetails
   @bahmutov/cypress-esbuild-preprocessor ^2.2.0 → ^2.2.3  
   cypress ^13.3.2 → ^13.15.0
 
+### CI integration
+
+- Add GitHub workflow in [.github/](/.github)
+  Run tests on push to master, run a choice of test groups manually.
+
 ### Reporting
 
-- Add json and html reporting to cucumber in [package.json](/package.json)  
-  Html for human consumers, json for github test summary.
+- Add html reporting to cucumber in [package.json](/package.json)  
+  For human consumers. Uploaded to github after workflow runs.
 
 ### Additional libraries
 
 - Add @testing-library/cypress  
   DOM queries, role based finding strategies
 - Add chai
-  Non-webfirst assertions
+  Non web-first assertions
 - Add ajv
   JSON schema validation
 
@@ -89,3 +94,13 @@ Some minor changes were added to the [userDetails](/cypress/fixtures/userDetails
   To improve testability, I decided to ignore these exceptions in [e2e.js](/cypress/support/e2e.js).
 
 ## Further improvement options
+
+- Migrate to Typescript
+  Type safety, richer IntelliSense info, improved linting, cozy test development.
+- Add Cypress actions
+  It is Cypress after all, isn't it.
+- Use more Cypress asserts rather than chai
+  Utilise the actions to utilise asynchronicity.
+- Nicer looking html report
+- Parallel test execution
+- ...

@@ -1,0 +1,48 @@
+name: Run Cypress tests in a container
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      testgroup:
+        description: 'Test group to run'
+        required: true
+        default: 'All tests'
+        type: choice
+        options:
+          - API tests only
+          - UI tests only
+          - All tests
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+    name: Run Cypress tests in a container
+    container:
+      image: cypress/browsers:node-20.17.0-chrome-129.0.6668.70-1-ff-130.0.1-edge-129.0.2792.52-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare cypress run command
+        if: ${{ inputs.testgroup }}
+        id: prep
+        run: |
+          case "${{ inputs.testgroup }}" in
+          "API tests only")
+          echo "CYPRESS_tags=@API" >> $GITHUB_ENV
+          ;;
+          "UI tests only")
+          echo "CYPRESS_tags=@UI" >> $GITHUB_ENV
+          ;;
+          *)
+          echo "CYPRESS_tags=" >> $GITHUB_ENV
+          esac
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-cypress-html-report
+          path: reports/cucumber-report.html
