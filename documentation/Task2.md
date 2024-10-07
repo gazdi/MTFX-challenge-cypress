@@ -49,6 +49,21 @@
 > AND They are all in the state of England  
 > AND Each one has a place name, longitude, state, state abbreviation and latitude
 
+## Run instructions
+
+The solution can be run
+
+- via GitHub Actions
+  - visit the [workflow page](https://github.com/gazdi/MTFX-challenge-cypress/actions/workflows/cypress-containerised.yml)
+  - select 'Run workflow'
+  - under 'Test group to run' select 'API tests only'
+  - click 'Run workflow'
+- locally
+  - clone this repo
+  - install dependencies
+  - run `npm run cy:run:api`
+- automatically if you decide to push to the `main` branch
+
 ## Questions/notes to PO
 
 - Please provide a background as part of the story, mention the API endpoint, like the task context does

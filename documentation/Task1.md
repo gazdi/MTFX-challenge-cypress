@@ -15,6 +15,21 @@
 > 5.  Show off your skills! \[Examples: environment configuration files, Reporting tool integration, Negative test scenarios, book store application, be creative!\]
 > 6.  How else would you look to improve the automation testing on this project?
 
+## Run instructions
+
+The solution can be run
+
+- via GitHub Actions
+  - visit the [workflow page](https://github.com/gazdi/MTFX-challenge-cypress/actions/workflows/cypress-containerised.yml)
+  - select 'Run workflow'
+  - under 'Test group to run' select 'UI tests only'
+  - click 'Run workflow'
+- locally
+  - clone this repo
+  - install dependencies
+  - run `npm run cy:run:ui`
+- automatically if you decide to push to the `main` branch
+
 ## Fixes and Improvements
 
 This section lists enhancements added to the solution together together with brief reasons.  
@@ -60,7 +75,7 @@ Some minor changes were added to the [userDetails](/cypress/fixtures/userDetails
 - Remove '.features' file extension from [cypress.config.js](/cypress.config.js)  
   One file, one feature.
 - Add baseUrl to [cypress.config.js](/cypress.config.js)  
-  Convenience.
+  Convenience in UI tests, something to work around in API tests.
 - Update cucumber stepDefinitions 'typo' in [package.json](/package.json)  
   What would 'e3e' mean, anyway?
 - Update all packages to latest  
@@ -71,7 +86,7 @@ Some minor changes were added to the [userDetails](/cypress/fixtures/userDetails
 ### CI integration
 
 - Add GitHub workflow in [.github/](/.github)
-  Run tests on push to master, run a choice of test groups manually.
+  Run tests on push to main, run a choice of test groups manually.
 
 ### Reporting
 
