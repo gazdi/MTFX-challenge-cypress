@@ -2,7 +2,7 @@ name: Run Cypress tests in a container
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
     inputs:
       testgroup:
