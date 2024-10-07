@@ -1,3 +1,4 @@
+@API
 Feature: postcode search on Zippopotam API
 
 Background: set up Zippopotam postcode search endpoint url (without parameters)
